@@ -10,5 +10,11 @@ public class MenuMessage {
             2- Search Item
             3- Display all items
             """;
+    static public String MemberMenu = """
+            Register member
+                Find member
+                List members
+            """;
+
 
 }
