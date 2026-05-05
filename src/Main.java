@@ -21,8 +21,6 @@ public class Main {
         Boolean Continue = true;
         while(Continue){
 
-            System.out.println("Library management system");
-            System.out.println();
             menu.displayMenu();
             System.out.println(Constants.ENTER_OPTION);
             switch (scanner.nextInt()){
@@ -43,6 +41,7 @@ public class Main {
                         MemberExit = memberService.handleMemberMenu(scanner.nextInt());
                     }
                 }case 3->{
+                    System.out.println("Exit...");
                     Continue = false;
                 }
             }
