@@ -12,6 +12,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class LibraryService implements LibraryInterface {
+
     static List<Item> LibraryItem = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
@@ -23,6 +24,7 @@ public class LibraryService implements LibraryInterface {
                 return;
             }
         }
+
         LibraryItem.add(items);
         System.out.println(Constants.ITEM_ADDED_SUCCESSFULLY);
     }
@@ -40,6 +42,7 @@ public class LibraryService implements LibraryInterface {
                 """);
 
             System.out.println(Constants.ENTER_OPTION);
+
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -59,6 +62,7 @@ public class LibraryService implements LibraryInterface {
                     book.setStatus(true);
                     book.setItemType("Book");
                     book.setID(UUID.randomUUID());
+
                     addItem(book);
                 }
 
@@ -77,6 +81,7 @@ public class LibraryService implements LibraryInterface {
                     magazines.setStatus(true);
                     magazines.setItemType("Magazines");
                     magazines.setID(UUID.randomUUID());
+
                     addItem(magazines);
                 }
 
@@ -86,34 +91,34 @@ public class LibraryService implements LibraryInterface {
             }
         }
     }
-    public void displayAllItem(){
-        System.out.println("** ** ** Items List ** ** **" );
-        System.out.println();
+
+    public void displayAllItem() {
+
+        System.out.println("** ** ** Items List ** ** **\n");
+
         System.out.println("MAGAZINE DETAILS");
-        for(Item i : LibraryItem){
-                if (i instanceof Magazines magazine) {
-
-                    System.out.println("Title: " + magazine.getTitle());
-                    System.out.println("Issue Number: " + magazine.getIssueNumber());
-                    System.out.println("Available: " + magazine.getStatus());
-                    System.out.println();
-                }
-
+        for (Item i : LibraryItem) {
+            if (i instanceof Magazines magazine) {
+                System.out.println("Title: " + magazine.getTitle());
+                System.out.println("Issue Number: " + magazine.getIssueNumber());
+                System.out.println("Available: " + magazine.getStatus());
+                System.out.println();
+            }
         }
+
         System.out.println("BOOK DETAILS");
-        for(Item i : LibraryItem){
-                if (i instanceof Book book) {
-
-                    System.out.println("Title: " + book.getTitle());
-                    System.out.println("Author: " + book.getAuthor());
-                    System.out.println("Available: " + book.getStatus());
-                    System.out.println();
-                }
+        for (Item i : LibraryItem) {
+            if (i instanceof Book book) {
+                System.out.println("Title: " + book.getTitle());
+                System.out.println("Author: " + book.getAuthor());
+                System.out.println("Available: " + book.getStatus());
+                System.out.println();
+            }
         }
-
     }
 
     public Item findItemByTitle() {
+
         System.out.println("Enter Item Name: ");
         String title = scanner.nextLine();
 
@@ -121,51 +126,44 @@ public class LibraryService implements LibraryInterface {
 
             if (i.getTitle().equalsIgnoreCase(title)) {
 
-
                 if (i instanceof Book book) {
                     System.out.println("BOOK DETAILS");
                     System.out.println("Title: " + book.getTitle());
                     System.out.println("Author: " + book.getAuthor());
                     System.out.println("Available: " + book.getStatus());
-                }
-                else if (i instanceof Magazines magazine) {
+
+                } else if (i instanceof Magazines magazine) {
                     System.out.println("MAGAZINE DETAILS");
                     System.out.println("Title: " + magazine.getTitle());
                     System.out.println("Issue Number: " + magazine.getIssueNumber());
                     System.out.println("Available: " + magazine.getStatus());
+
                 } else {
                     System.out.println(Constants.ITEM_NOT_FOUND);
                 }
-                return  i;
+
+                return i;
             }
         }
 
         return null;
     }
 
-
-
-
     public Boolean handleLibraryMenu(Integer option) {
+
         switch (option) {
             case 1 -> addMultipleItems();
-            case 2-> findItemByTitle();
-            case 3-> displayAllItem();
-            case 4-> {
+            case 2 -> findItemByTitle();
+            case 3 -> displayAllItem();
+
+            case 4 -> {
                 System.out.println("Exit Library Services...");
                 return false;
             }
 
-
             default -> System.out.println("Invalid option");
-
-
-            }
-
-
+        }
 
         return true;
-
-
     }
 }

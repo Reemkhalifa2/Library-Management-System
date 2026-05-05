@@ -2,7 +2,6 @@ package Services;
 
 import Entites.*;
 import Utilities.Constants;
-import Utilities.MenuMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,6 @@ public class MemberService {
 
     static List<Member> memberList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
-
     public void registerMember(Member member){
         for (Member i : memberList) {
             if (i.getId().equals(member.getId())) {
@@ -24,6 +22,7 @@ public class MemberService {
         memberList.add(member);
         System.out.println(Constants.MEMBER_REGISTERED);
     }
+
     public void registerMultipleMembers(){
 
         Member member = new Member();

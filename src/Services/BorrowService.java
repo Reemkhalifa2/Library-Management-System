@@ -8,13 +8,16 @@ import Utilities.Constants;
 import java.util.Scanner;
 
 public class BorrowService implements BorrowInterface {
-    LibraryService libraryService = new LibraryService();
 
+    LibraryService libraryService = new LibraryService();
     MemberService memberService = new MemberService();
     static Scanner scanner = new Scanner(System.in);
+
     @Override
     public void borrowItem() {
+
         libraryService.displayAllItem();
+
         Item item = libraryService.findItemByTitle();
 
         if (item == null) {
@@ -25,6 +28,7 @@ public class BorrowService implements BorrowInterface {
             System.out.println(Constants.ITEM_BORROWED);
             return;
         }
+
         Member member = memberService.findMemberById();
 
         if (member == null) {
@@ -32,23 +36,25 @@ public class BorrowService implements BorrowInterface {
         }
 
         member.setBorrowItems(item);
-
         item.setStatus(false);
 
         System.out.println(Constants.ITEM_BORROWED_SUCCESSFULLY);
     }
+
     @Override
     public void returnItem() {
+
         Member member = memberService.findMemberById();
 
         if (member == null) {
             System.out.println(Constants.MEMBER_NOT_FOUND);
             return;
         }
+
         System.out.println();
         System.out.println("Enter Item title to return: ");
-        String title = scanner.nextLine();
 
+        String title = scanner.nextLine();
         Item foundItem = null;
 
         for (Item item : member.getBorrowItems()) {
@@ -65,18 +71,19 @@ public class BorrowService implements BorrowInterface {
 
         member.getBorrowItems().remove(foundItem);
         foundItem.setStatus(true);
+
         System.out.println(Constants.ITEM_RETURNED_SUCCESSFULLY);
     }
 
-    public Boolean handleBorrowMenu(Integer option){
+    public Boolean handleBorrowMenu(Integer option) {
+
         switch (option) {
-            case 1-> borrowItem();
-            case 2-> returnItem();
-            case 3-> {
+            case 1 -> borrowItem();
+            case 2 -> returnItem();
+            case 3 -> {
                 System.out.println("Exit Member Services...");
                 return false;
             }
-
             default -> System.out.println("Invalid option");
         }
 

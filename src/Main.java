@@ -7,8 +7,6 @@ import Utilities.MenuMessage;
 
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     public static void main(String[] args) {
@@ -21,45 +19,56 @@ public class Main {
         Menu menu = new Menu();
 
         Boolean Continue = true;
-        while(Continue){
+
+        while (Continue) {
 
             menu.displayMenu();
             System.out.println(Constants.ENTER_OPTION);
-            switch (scanner.nextInt()){
-                case 1->{
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+
+                case 1 -> {
                     Boolean LibraryExit = true;
-                    while (LibraryExit){
+
+                    while (LibraryExit) {
                         System.out.println(MenuMessage.LibraryService);
                         System.out.println(Constants.ENTER_OPTION);
+
                         LibraryExit = libraryService.handleLibraryMenu(scanner.nextInt());
                     }
-
                 }
-                case 2->{
+
+                case 2 -> {
                     Boolean MemberExit = true;
-                    while (MemberExit){
+
+                    while (MemberExit) {
                         System.out.println(MenuMessage.MemberMenu);
                         System.out.println(Constants.ENTER_OPTION);
+
                         MemberExit = memberService.handleMemberMenu(scanner.nextInt());
                     }
                 }
-                case 3->{
+
+                case 3 -> {
                     Boolean borrowExit = true;
-                    while (borrowExit){
+
+                    while (borrowExit) {
                         System.out.println(MenuMessage.BorrowMenu);
                         System.out.println(Constants.ENTER_OPTION);
+
                         borrowExit = borrowService.handleBorrowMenu(scanner.nextInt());
                     }
                 }
 
-                case 4->{
+                case 4 -> {
                     System.out.println("Exit...");
                     Continue = false;
                 }
+
+                default -> System.out.println("Invalid option");
             }
-
         }
-
-
     }
 }
