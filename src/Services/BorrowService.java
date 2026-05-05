@@ -1,17 +1,18 @@
 package Services;
 
+import Behaviour.BorrowInterface;
 import Entites.Item;
 import Entites.Member;
 import Utilities.Constants;
 
 import java.util.Scanner;
 
-public class BorrowService {
+public class BorrowService implements BorrowInterface {
     LibraryService libraryService = new LibraryService();
 
     MemberService memberService = new MemberService();
     static Scanner scanner = new Scanner(System.in);
-
+    @Override
     public void borrowItem() {
         libraryService.displayAllItem();
         Item item = libraryService.findItemByTitle();
@@ -36,7 +37,7 @@ public class BorrowService {
 
         System.out.println(Constants.ITEM_BORROWED_SUCCESSFULLY);
     }
-
+    @Override
     public void returnItem() {
         Member member = memberService.findMemberById();
 
