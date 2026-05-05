@@ -69,6 +69,7 @@ public class MemberService {
             System.out.print("Street: "+ member.getAddress().getStreet() +
                     " || City: "+ member.getAddress().getCity() +
                     " || Postal Code: "+ member.getAddress().getPostalCode());
+            System.out.println();
 
             if(member.getBorrowItems() != null){
                 for(Item item : member.getBorrowItems()){
