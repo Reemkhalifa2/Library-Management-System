@@ -151,6 +151,7 @@ public class LibraryService implements LibraryInterface {
             case 2-> findItemByTitle();
             case 3-> displayAllItem();
             case 4-> {
+                System.out.println("Exit Library Services...");
                 return false;
             }
 
