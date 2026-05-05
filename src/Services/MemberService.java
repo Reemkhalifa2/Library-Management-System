@@ -1,8 +1,6 @@
 package Services;
 
-import Entites.Address;
-import Entites.Item;
-import Entites.Member;
+import Entites.*;
 import Utilities.Constants;
 import Utilities.MenuMessage;
 
@@ -12,7 +10,8 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class MemberService {
-    private List<Member> memberList = new ArrayList<>();
+
+     List<Member> memberList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public void registerMember(Member member){
@@ -60,23 +59,50 @@ public class MemberService {
         }
         }
 
+    public void displayAllMembers(){
+        System.out.println("** ** ** Members List ** ** **" );
+        System.out.println();
+        for(Member member : memberList){
+            System.out.println("Member Name: "+member.getName());
+            System.out.println("Member ID: "+member.getCivilId());
+            System.out.println("Member address: ");
+            System.out.print("Street: "+ member.getAddress().getStreet() +
+                    " || City: "+ member.getAddress().getCity() +
+                    " || Postal Code: "+ member.getAddress().getPostalCode());
 
-
-
-
-    public Boolean handleMemberMenu(Integer option){
-        while (true){
-
-            System.out.println(MenuMessage.MemberMenu);
-            System.out.println();
-
-            System.out.println(Constants.ENTER_OPTION);
-
-            switch (option){
-                case 1-> registerMultipleMembers();
-
+            if(member.getBorrowItems() != null){
+                for(Item item : member.getBorrowItems()){
+                    System.out.print("Borrowed Items: " + item.getTitle() + " || ");
+                }
             }
+
         }
+
+    }
+
+
+
+
+
+    public Boolean handleMemberMenu(Integer option) {
+        switch (option) {
+            case 1 -> registerMultipleMembers();
+            //case 2-> ;
+            case 3-> displayAllMembers();
+            case 4-> {
+                System.out.println("Exit Member Services...");
+                return false;
+            }
+
+            default -> System.out.println("Invalid option");
+
+
+        }
+
+
+
+        return true;
+
 
     }
 }
