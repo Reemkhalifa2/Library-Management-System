@@ -5,21 +5,12 @@ import java.util.UUID;
 
 public class Member  {
     private Address address;
+
     public Address getAddress() { return address; }
     public void setAddress(Address address) { this.address = address; }
     public Member(){
         this.address = new Address();
     }
-
-    public List<String> getBorrowItems() {
-        return borrowItems;
-    }
-
-    public void setBorrowItems(List<String> borrowItems) {
-        this.borrowItems = borrowItems;
-    }
-
-
 
     public String getName() {
         return name;
@@ -49,5 +40,14 @@ public class Member  {
     }
 
     private UUID Id ;
-    private List<String> borrowItems ;
+
+    public void setBorrowItems(List<Item> borrowItems) {
+        this.borrowItems = borrowItems;
+    }
+
+    public List<Item> getBorrowItems() {
+        return borrowItems;
+    }
+
+    private List<Item> borrowItems ;
 }
