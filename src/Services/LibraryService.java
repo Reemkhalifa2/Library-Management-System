@@ -27,7 +27,7 @@ public class LibraryService implements LibraryInterface {
         System.out.println(Constants.ITEM_ADDED_SUCCESSFULLY);
     }
 
-    public void handleLibraryMenu(Integer option) {
+    public Boolean handleLibraryMenu(Integer option) {
         Scanner scanner = new Scanner(System.in);
         Item item = new Item();
         switch (option) {
@@ -40,12 +40,13 @@ public class LibraryService implements LibraryInterface {
                 System.out.println(Constants.ENTER_OPTION);
                 int choice = scanner.nextInt();
 
-                System.out.print("Enter Title: ");
-                String title = scanner.nextLine();
+
 
                 switch (choice) {
                     case 1 -> {
                         Book book = new Book();
+                        System.out.println("Enter Title: ");
+                        String title = scanner.nextLine();
                         System.out.print("Enter Author: ");
                         String author = scanner.nextLine();
                         book.setTitle(title);
@@ -56,6 +57,8 @@ public class LibraryService implements LibraryInterface {
                     }
                     case 2 -> {
                         Magazines magazines = new Magazines();
+                        System.out.println("Enter Title: ");
+                        String title = scanner.nextLine();
                         System.out.print("Enter Issue Number: ");
                         Integer issue = scanner.nextInt();
                         magazines.setTitle(title);
@@ -64,6 +67,9 @@ public class LibraryService implements LibraryInterface {
                         addItem(magazines);
 
                     }
+                    case 3->{
+                        return true;
+                    }
                 }
 
 
@@ -71,6 +77,7 @@ public class LibraryService implements LibraryInterface {
 
 
         }
+        return false;
 
 
     }
