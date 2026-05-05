@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class MemberService {
 
-     List<Member> memberList = new ArrayList<>();
+    static List<Member> memberList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     public void registerMember(Member member){
@@ -98,6 +98,7 @@ public class MemberService {
                 System.out.print("Street: " + member.getAddress().getStreet() +
                         " || City: " + member.getAddress().getCity() +
                         " || Postal Code: " + member.getAddress().getPostalCode());
+                System.out.println();
 
                 if (member.getBorrowItems() != null) {
                     for (Item item : member.getBorrowItems()) {
@@ -107,6 +108,7 @@ public class MemberService {
 
                 break;
             }
+
             System.out.println(Constants.MEMBER_NOT_FOUND);
         }
 
