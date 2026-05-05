@@ -7,6 +7,8 @@ public class MenuMessage {
             """;
     static public String LibraryService = """
             1- Add Item
+            2- Search Item
+            3- Display all items
             """;
 
 }
