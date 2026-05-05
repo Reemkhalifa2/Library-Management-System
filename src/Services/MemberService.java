@@ -14,6 +14,7 @@ import java.util.UUID;
 public class MemberService {
     private List<Member> memberList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
+
     public void registerMember(Member member){
         for (Member i : memberList) {
             if (i.getId().equals(member.getId())) {
@@ -52,17 +53,25 @@ public class MemberService {
 
             member.setAddress(address);
             registerMember(member);
+            System.out.println(Constants.INPUT_EXIT_CONTINUE_MESSAGE_MEMBER);
+            if (scanner.nextLine().equalsIgnoreCase("q")) {
+                flag = false;
+            }
+        }
         }
 
-    }
+
 
 
 
     public Boolean handleMemberMenu(){
         while (true){
+
             System.out.println(MenuMessage.MemberMenu);
             System.out.println();
+
             System.out.println(Constants.ENTER_OPTION);
+
             switch (scanner.nextInt()){
                 case 1-> registerMultipleMembers();
 
