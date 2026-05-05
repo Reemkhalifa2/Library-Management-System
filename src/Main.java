@@ -1,4 +1,5 @@
 import Menu.Menu;
+import Services.BorrowService;
 import Services.LibraryService;
 import Services.MemberService;
 import Utilities.Constants;
@@ -14,6 +15,7 @@ public class Main {
 
         LibraryService libraryService = new LibraryService();
         MemberService memberService = new MemberService();
+        BorrowService borrowService = new BorrowService();
 
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
@@ -40,7 +42,17 @@ public class Main {
                         System.out.println(Constants.ENTER_OPTION);
                         MemberExit = memberService.handleMemberMenu(scanner.nextInt());
                     }
-                }case 3->{
+                }
+                case 3->{
+                    Boolean borrowExit = true;
+                    while (borrowExit){
+                        System.out.println(MenuMessage.BorrowMenu);
+                        System.out.println(Constants.ENTER_OPTION);
+                        borrowExit = borrowService.handleBorrowMenu(scanner.nextInt());
+                    }
+                }
+
+                case 4->{
                     System.out.println("Exit...");
                     Continue = false;
                 }
