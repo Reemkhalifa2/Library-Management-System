@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class BorrowService {
     LibraryService libraryService = new LibraryService();
+
     MemberService memberService = new MemberService();
-    static Scanner scanner = new Scanner(System.in);
 
     public void borrow() {
         libraryService.displayAllItem();
@@ -46,17 +46,13 @@ public class BorrowService {
             case 1-> borrow();
 
 
-            case 4-> {
+            case 3-> {
                 System.out.println("Exit Member Services...");
                 return false;
             }
 
             default -> System.out.println("Invalid option");
-
-
         }
-
-
 
         return true;
     }
