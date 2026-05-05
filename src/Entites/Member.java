@@ -41,7 +41,7 @@ public class Member  {
 
     private UUID Id ;
 
-    public void setBorrowItems(List<Item> borrowItems) {
+    public void setBorrowItems(Item item) {
         this.borrowItems = borrowItems;
     }
 
