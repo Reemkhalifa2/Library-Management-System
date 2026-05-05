@@ -25,6 +25,14 @@ public class MenuMessage {
             4- Exit
 
             """;
+    static public String BorrowMenu = """
+            Borrow Service
+            
+            1- Borrow Item
+            2- Return Item
+            4- Exit
+
+            """;
 
 
 }
