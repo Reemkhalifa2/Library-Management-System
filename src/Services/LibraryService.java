@@ -88,23 +88,27 @@ public class LibraryService implements LibraryInterface {
     }
     public void displayAllItem(){
         System.out.println("** ** ** Items List ** ** **" );
+        System.out.println();
+        System.out.println("MAGAZINE DETAILS");
         for(Item i : LibraryItem){
+                if (i instanceof Magazines magazine) {
 
-                if (i instanceof Book book) {
-                    System.out.println("BOOK DETAILS");
-                    System.out.println("Title: " + book.getTitle());
-                    System.out.println("Author: " + book.getAuthor());
-                    System.out.println("Available: " + book.getStatus());
-                    System.out.println();
-                }
-                else if (i instanceof Magazines magazine) {
-                    System.out.println("MAGAZINE DETAILS");
                     System.out.println("Title: " + magazine.getTitle());
                     System.out.println("Issue Number: " + magazine.getIssueNumber());
                     System.out.println("Available: " + magazine.getStatus());
                     System.out.println();
                 }
 
+        }
+        System.out.println("BOOK DETAILS");
+        for(Item i : LibraryItem){
+                if (i instanceof Book book) {
+
+                    System.out.println("Title: " + book.getTitle());
+                    System.out.println("Author: " + book.getAuthor());
+                    System.out.println("Available: " + book.getStatus());
+                    System.out.println();
+                }
         }
 
     }
