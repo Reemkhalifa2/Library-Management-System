@@ -113,12 +113,43 @@ public class LibraryService implements LibraryInterface {
 
     }
 
+    public void findItemByTitle() {
+        System.out.println("Enter Item Name: ");
+        String title = scanner.nextLine();
+
+        for (Item i : LibraryItem) {
+
+            if (i.getTitle().equalsIgnoreCase(title)) {
+
+                if (i instanceof Book book) {
+                    System.out.println("BOOK DETAILS");
+                    System.out.println("Title: " + book.getTitle());
+                    System.out.println("Author: " + book.getAuthor());
+                    System.out.println("Available: " + book.getStatus());
+                }
+                else if (i instanceof Magazines magazine) {
+                    System.out.println("MAGAZINE DETAILS");
+                    System.out.println("Title: " + magazine.getTitle());
+                    System.out.println("Issue Number: " + magazine.getIssueNumber());
+                    System.out.println("Available: " + magazine.getStatus());
+                }else{
+                    System.out.println(Constants.ITEM_NOT_FOUND);
+                }
+            }
+        }
+
+
+
+    }
+
+
 
 
     public Boolean handleLibraryMenu(Integer option) {
         switch (option) {
             case 1 -> addMultipleItems();
-            case 2-> displayAllItem();
+            case 2-> findItemByTitle();
+            case 3-> displayAllItem();
             case 4-> {
                 return false;
             }
