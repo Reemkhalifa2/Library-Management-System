@@ -64,7 +64,7 @@ public class MemberService {
 
 
 
-    public Boolean handleMemberMenu(){
+    public Boolean handleMemberMenu(Integer option){
         while (true){
 
             System.out.println(MenuMessage.MemberMenu);
@@ -72,7 +72,7 @@ public class MemberService {
 
             System.out.println(Constants.ENTER_OPTION);
 
-            switch (scanner.nextInt()){
+            switch (option){
                 case 1-> registerMultipleMembers();
 
             }
