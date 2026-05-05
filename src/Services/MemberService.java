@@ -80,6 +80,38 @@ public class MemberService {
 
     }
 
+    public Member findMemberById() {
+        System.out.println("Enter Member Id: ");
+        String id = scanner.nextLine();
+
+        Member foundMember = null;
+
+        for (Member member : memberList) {
+
+            if (member.getCivilId().equals(id)) {
+
+                foundMember = member;
+
+                System.out.println("Member Name: " + member.getName());
+                System.out.println("Member ID: " + member.getCivilId());
+                System.out.println("Member address: ");
+                System.out.print("Street: " + member.getAddress().getStreet() +
+                        " || City: " + member.getAddress().getCity() +
+                        " || Postal Code: " + member.getAddress().getPostalCode());
+
+                if (member.getBorrowItems() != null) {
+                    for (Item item : member.getBorrowItems()) {
+                        System.out.print("Borrowed Items: " + item.getTitle() + " || ");
+                    }
+                }
+
+                break;
+            }
+            System.out.println(Constants.MEMBER_NOT_FOUND);
+        }
+
+        return foundMember;
+    }
 
 
 
@@ -87,7 +119,7 @@ public class MemberService {
     public Boolean handleMemberMenu(Integer option) {
         switch (option) {
             case 1 -> registerMultipleMembers();
-            //case 2-> ;
+            case 2-> findMemberById();
             case 3-> displayAllMembers();
             case 4-> {
                 System.out.println("Exit Member Services...");
