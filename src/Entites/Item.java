@@ -1,6 +1,6 @@
 package Entites;
 
-public class item {
+public class Item {
     private Integer ID ;
     private String title;
     private Boolean status;
