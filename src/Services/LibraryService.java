@@ -113,13 +113,17 @@ public class LibraryService implements LibraryInterface {
 
     }
 
-    public void findItemByTitle() {
+    public Item findItemByTitle() {
         System.out.println("Enter Item Name: ");
         String title = scanner.nextLine();
+
+        Item foundItem = null;
 
         for (Item i : LibraryItem) {
 
             if (i.getTitle().equalsIgnoreCase(title)) {
+
+                foundItem = i;
 
                 if (i instanceof Book book) {
                     System.out.println("BOOK DETAILS");
@@ -132,14 +136,13 @@ public class LibraryService implements LibraryInterface {
                     System.out.println("Title: " + magazine.getTitle());
                     System.out.println("Issue Number: " + magazine.getIssueNumber());
                     System.out.println("Available: " + magazine.getStatus());
-                }else{
+                } else {
                     System.out.println(Constants.ITEM_NOT_FOUND);
                 }
             }
         }
 
-
-
+        return foundItem;
     }
 
 
