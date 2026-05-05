@@ -1,8 +1,15 @@
 package Entites;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Member  {
+    private Address address;
+    public Address getAddress() { return address; }
+    public void setAddress(Address address) { this.address = address; }
+    public Member(){
+        this.address = new Address();
+    }
 
     public List<String> getBorrowItems() {
         return borrowItems;
@@ -12,13 +19,7 @@ public class Member  {
         this.borrowItems = borrowItems;
     }
 
-    public String getId() {
-        return Id;
-    }
 
-    public void setId(String id) {
-        Id = id;
-    }
 
     public String getName() {
         return name;
@@ -27,7 +28,26 @@ public class Member  {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getCivilId() {
+        return civilId;
+    }
+
+    public void setCivilId(String civilId) {
+        this.civilId = civilId;
+    }
     private String name;
-    private String Id;
+
+    private String civilId;
+
+    public UUID getId() {
+        return Id;
+    }
+
+    public void setId(UUID id) {
+        Id = id;
+    }
+
+    private UUID Id ;
     private List<String> borrowItems ;
 }
