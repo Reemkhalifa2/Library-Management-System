@@ -10,27 +10,23 @@ public class BorrowService {
     LibraryService libraryService = new LibraryService();
 
     MemberService memberService = new MemberService();
+    static Scanner scanner = new Scanner(System.in);
 
-    public void borrow() {
+    public void borrowItem() {
         libraryService.displayAllItem();
-        System.out.println("Enter Item title to borrow: ");
-
         Item item = libraryService.findItemByTitle();
 
         if (item == null) {
-            System.out.println(Constants.ITEM_NOT_FOUND);
             return;
         }
 
         if (!item.getStatus()) {
-            System.out.println("Item is already borrowed!");
+            System.out.println(Constants.ITEM_BORROWED);
             return;
         }
-        System.out.println("Enter Member ID: ");
         Member member = memberService.findMemberById();
 
         if (member == null) {
-            System.out.println(Constants.MEMBER_NOT_FOUND);
             return;
         }
 
@@ -38,14 +34,43 @@ public class BorrowService {
 
         item.setStatus(false);
 
-        System.out.println("Item borrowed successfully!");
+        System.out.println(Constants.ITEM_BORROWED_SUCCESSFULLY);
+    }
+
+    public void returnItem() {
+        Member member = memberService.findMemberById();
+
+        if (member == null) {
+            System.out.println(Constants.MEMBER_NOT_FOUND);
+            return;
+        }
+        System.out.println();
+        System.out.println("Enter Item title to return: ");
+        String title = scanner.nextLine();
+
+        Item foundItem = null;
+
+        for (Item item : member.getBorrowItems()) {
+            if (item.getTitle().equalsIgnoreCase(title)) {
+                foundItem = item;
+                break;
+            }
+        }
+
+        if (foundItem == null) {
+            System.out.println(Constants.ITEM_NOT_FOUND);
+            return;
+        }
+
+        member.getBorrowItems().remove(foundItem);
+        foundItem.setStatus(true);
+        System.out.println(Constants.ITEM_RETURNED_SUCCESSFULLY);
     }
 
     public Boolean handleBorrowMenu(Integer option){
         switch (option) {
-            case 1-> borrow();
-
-
+            case 1-> borrowItem();
+            case 2-> returnItem();
             case 3-> {
                 System.out.println("Exit Member Services...");
                 return false;
