@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class LibraryService implements LibraryInterface {
-    List<Item> LibraryItem = new ArrayList<>();
+    static List<Item> LibraryItem = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -117,13 +117,10 @@ public class LibraryService implements LibraryInterface {
         System.out.println("Enter Item Name: ");
         String title = scanner.nextLine();
 
-        Item foundItem = null;
-
         for (Item i : LibraryItem) {
 
             if (i.getTitle().equalsIgnoreCase(title)) {
 
-                foundItem = i;
 
                 if (i instanceof Book book) {
                     System.out.println("BOOK DETAILS");
@@ -139,11 +136,11 @@ public class LibraryService implements LibraryInterface {
                 } else {
                     System.out.println(Constants.ITEM_NOT_FOUND);
                 }
+                return  i;
             }
         }
-        System.out.println(foundItem);
 
-        return foundItem;
+        return null;
     }
 
 
