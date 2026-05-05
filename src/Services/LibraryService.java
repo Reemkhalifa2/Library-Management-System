@@ -141,6 +141,7 @@ public class LibraryService implements LibraryInterface {
                 }
             }
         }
+        System.out.println(foundItem);
 
         return foundItem;
     }

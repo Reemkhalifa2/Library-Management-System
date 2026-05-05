@@ -6,7 +6,8 @@ public class MenuMessage {
             
             1- Library Service.
             2- Member Service.
-            3- Exit
+            3- Borrow Service.
+            4- Exit
             """;
     static public String LibraryService = """
             Library Service
