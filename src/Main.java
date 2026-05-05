@@ -1,5 +1,6 @@
 import Menu.Menu;
 import Services.LibraryService;
+import Services.MemberService;
 import Utilities.Constants;
 import Utilities.MenuMessage;
 
@@ -8,13 +9,18 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+
     public static void main(String[] args) {
+
         LibraryService libraryService = new LibraryService();
+        MemberService memberService = new MemberService();
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("am worling");
         Menu menu = new Menu();
+
         Boolean Continue = true;
         while(Continue){
+
             System.out.println("Library management system");
             System.out.println();
             menu.displayMenu();
@@ -30,6 +36,13 @@ public class Main {
 
                 }
                 case 2->{
+                    Boolean MemberExit = true;
+                    while (MemberExit){
+                        System.out.println(MenuMessage.MemberMenu);
+                        System.out.println(Constants.ENTER_OPTION);
+                        MemberExit = memberService.handleMemberMenu(scanner.nextInt());
+                    }
+                }case 3->{
                     Continue = false;
                 }
             }
