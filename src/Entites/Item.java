@@ -29,6 +29,15 @@ public class Item {
         this.ID = ID;
     }
 
+    public String getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
+    }
+
+    private String itemType;
     private String title;
     private Boolean status;
 
