@@ -13,6 +13,7 @@ import java.util.UUID;
 
 public class LibraryService implements LibraryInterface {
     List<Item> LibraryItem = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
 
     @Override
     public void addItem(Item items) {
@@ -22,62 +23,111 @@ public class LibraryService implements LibraryInterface {
                 return;
             }
         }
-        items.setID(UUID.randomUUID());
         LibraryItem.add(items);
         System.out.println(Constants.ITEM_ADDED_SUCCESSFULLY);
     }
 
-    public Boolean handleLibraryMenu(Integer option) {
-        Scanner scanner = new Scanner(System.in);
-        Item item = new Item();
-        switch (option) {
-            case 1 -> {
-                System.out.println(""" 
-                        1. Book.
-                        2. Magazine.
-                        """);
+    public void addMultipleItems() {
 
-                System.out.println(Constants.ENTER_OPTION);
-                int choice = scanner.nextInt();
+        boolean continueAdding = true;
 
+        while (continueAdding) {
 
+            System.out.println("""
+                1. Book
+                2. Magazine
+                3. Exit
+                """);
 
-                switch (choice) {
-                    case 1 -> {
-                        Book book = new Book();
-                        System.out.println("Enter Title: ");
-                        String title = scanner.nextLine();
-                        System.out.print("Enter Author: ");
-                        String author = scanner.nextLine();
-                        book.setTitle(title);
-                        book.setAuthor(author);
-                        book.setStatus(false);
-                        addItem(book);
+            System.out.println(Constants.ENTER_OPTION);
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-                    }
-                    case 2 -> {
-                        Magazines magazines = new Magazines();
-                        System.out.println("Enter Title: ");
-                        String title = scanner.nextLine();
-                        System.out.print("Enter Issue Number: ");
-                        Integer issue = scanner.nextInt();
-                        magazines.setTitle(title);
-                        magazines.setIssueNumber(issue);
-                        magazines.setStatus(false);
-                        addItem(magazines);
+            switch (choice) {
 
-                    }
-                    case 3->{
-                        return true;
-                    }
+                case 1 -> {
+                    Book book = new Book();
+
+                    System.out.print("Enter Title: ");
+                    String title = scanner.nextLine();
+
+                    System.out.print("Enter Author: ");
+                    String author = scanner.nextLine();
+
+                    book.setTitle(title);
+                    book.setAuthor(author);
+                    book.setStatus(true);
+                    book.setItemType("Book");
+                    book.setID(UUID.randomUUID());
+                    addItem(book);
                 }
+
+                case 2 -> {
+                    Magazines magazines = new Magazines();
+
+                    System.out.print("Enter Title: ");
+                    String title = scanner.nextLine();
+
+                    System.out.print("Enter Issue Number: ");
+                    int issue = scanner.nextInt();
+                    scanner.nextLine();
+
+                    magazines.setTitle(title);
+                    magazines.setIssueNumber(issue);
+                    magazines.setStatus(true);
+                    magazines.setItemType("Magazines");
+                    magazines.setID(UUID.randomUUID());
+                    addItem(magazines);
+                }
+
+                case 3 -> continueAdding = false;
+
+                default -> System.out.println("Invalid choice");
+            }
+        }
+    }
+    public void displayAllItem(){
+        System.out.println("** ** ** Items List ** ** **" );
+        for(Item i : LibraryItem){
+
+                if (i instanceof Book book) {
+                    System.out.println("BOOK DETAILS");
+                    System.out.println("Title: " + book.getTitle());
+                    System.out.println("Author: " + book.getAuthor());
+                    System.out.println("Available: " + book.getStatus());
+                    System.out.println();
+                }
+                else if (i instanceof Magazines magazine) {
+                    System.out.println("MAGAZINE DETAILS");
+                    System.out.println("Title: " + magazine.getTitle());
+                    System.out.println("Issue Number: " + magazine.getIssueNumber());
+                    System.out.println("Available: " + magazine.getStatus());
+                    System.out.println();
+                }
+
+        }
+
+    }
+
+
+
+    public Boolean handleLibraryMenu(Integer option) {
+        switch (option) {
+            case 1 -> addMultipleItems();
+            case 2-> displayAllItem();
+            case 4-> {
+                return false;
+            }
+
+
+            default -> System.out.println("Invalid option");
 
 
             }
 
 
-        }
-        return false;
+
+        return true;
 
 
     }
