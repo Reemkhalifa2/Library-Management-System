@@ -15,6 +15,8 @@ public class Main {
         Menu menu = new Menu();
         Boolean Continue = true;
         while(Continue){
+            System.out.println("Library management system");
+            System.out.println();
             menu.displayMenu();
             System.out.println(Constants.ENTER_OPTION);
             switch (scanner.nextInt()){
