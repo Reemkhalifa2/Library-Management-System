@@ -1,7 +1,9 @@
 package Entites;
 
+import java.util.UUID;
+
 public class Item {
-    private Integer ID ;
+    private UUID ID ;
 
     public Boolean getStatus() {
         return status;
@@ -19,11 +21,11 @@ public class Item {
         this.title = title;
     }
 
-    public Integer getID() {
+    public UUID getID() {
         return ID;
     }
 
-    public void setID(Integer ID) {
+    public void setID(UUID ID) {
         this.ID = ID;
     }
 
