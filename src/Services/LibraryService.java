@@ -91,7 +91,9 @@ public class LibraryService implements LibraryInterface {
                     String director = scanner.nextLine();
                     scanner.nextLine();
 
-                    
+                    dvd.setTitle(title);
+                    dvd.setDirector(director);
+
 
 
 
