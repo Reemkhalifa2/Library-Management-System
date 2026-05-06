@@ -133,6 +133,15 @@ public class LibraryService implements LibraryInterface {
                     System.out.println();
                 }
         }
+        System.out.println("DVD DETAILS");
+        for(Item i : LibraryItem){
+            if (i instanceof DVD dvd) {
+                System.out.println("DVD DETAILS");
+                System.out.println("Title: " + dvd.getTitle());
+                System.out.println("Director: " + dvd.getDirector());
+                System.out.println("Available: " + dvd.getStatus());
+            }
+        }
 
     }
 
