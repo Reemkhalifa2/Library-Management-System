@@ -93,6 +93,10 @@ public class LibraryService implements LibraryInterface {
 
                     dvd.setTitle(title);
                     dvd.setDirector(director);
+                    dvd.setStatus(true);
+                    dvd.setItemType("DVD");
+                    dvd.setID(UUID.randomUUID());
+                    addItem(dvd);
 
 
 
