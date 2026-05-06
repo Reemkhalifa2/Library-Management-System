@@ -84,6 +84,13 @@ public class LibraryService implements LibraryInterface {
 
                 case 3 -> {
                     DVD dvd = new DVD();
+                    System.out.print("Enter Title: ");
+                    String title = scanner.nextLine();
+
+                    System.out.print("Enter Director: ");
+                    int director = scanner.nextInt();
+                    scanner.nextLine();
+
 
 
                 }
