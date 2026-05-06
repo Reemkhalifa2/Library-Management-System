@@ -1,4 +1,5 @@
 package Entites;
 
-public class DVD {
+public class DVD extends Item{
+
 }
