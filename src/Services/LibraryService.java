@@ -88,8 +88,10 @@ public class LibraryService implements LibraryInterface {
                     String title = scanner.nextLine();
 
                     System.out.print("Enter Director: ");
-                    int director = scanner.nextInt();
+                    String director = scanner.nextLine();
                     scanner.nextLine();
+
+                    
 
 
 
