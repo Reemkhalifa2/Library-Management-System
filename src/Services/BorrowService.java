@@ -13,7 +13,6 @@ public class BorrowService {
 
     public void borrow() {
         libraryService.displayAllItem();
-
         System.out.println("Enter Item title to borrow: ");
 
         Item item = libraryService.findItemByTitle();
@@ -32,10 +31,6 @@ public class BorrowService {
 
         if (member == null) {
             System.out.println(Constants.MEMBER_NOT_FOUND);
-            return;
-        }
-        if(member.getBorrowItems().size() == 10){
-            System.out.println("Member has already borrowed the maximum number of items!");
             return;
         }
 

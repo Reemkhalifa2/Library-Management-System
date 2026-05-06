@@ -1,5 +1,6 @@
 package Entites;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +14,8 @@ public class Member  {
     }
 
     public String getName() {
-        return name;
+        return name
+                ;
     }
 
     public void setName(String name) {
@@ -42,12 +44,13 @@ public class Member  {
     private UUID Id ;
 
     public void setBorrowItems(Item item) {
-        this.borrowItems = borrowItems;
+
+        this.borrowItems.add(item);
     }
 
     public List<Item> getBorrowItems() {
         return borrowItems;
     }
 
-    private List<Item> borrowItems ;
+    private List<Item> borrowItems = new ArrayList<>();
 }

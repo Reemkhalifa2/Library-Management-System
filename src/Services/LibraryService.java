@@ -2,7 +2,6 @@ package Services;
 
 import Behaviour.LibraryInterface;
 import Entites.Book;
-import Entites.DVD;
 import Entites.Item;
 import Entites.Magazines;
 import Utilities.Constants;
@@ -37,8 +36,7 @@ public class LibraryService implements LibraryInterface {
             System.out.println("""
                 1. Book
                 2. Magazine
-                3. DVD
-                4. Exit
+                3. Exit
                 """);
 
             System.out.println(Constants.ENTER_OPTION);
@@ -82,28 +80,7 @@ public class LibraryService implements LibraryInterface {
                     addItem(magazines);
                 }
 
-                case 3 -> {
-                    DVD dvd = new DVD();
-                    System.out.print("Enter Title: ");
-                    String title = scanner.nextLine();
-
-                    System.out.print("Enter Director: ");
-                    String director = scanner.nextLine();
-                    scanner.nextLine();
-
-                    dvd.setTitle(title);
-                    dvd.setDirector(director);
-                    dvd.setStatus(true);
-                    dvd.setItemType("DVD");
-                    dvd.setID(UUID.randomUUID());
-                    addItem(dvd);
-
-
-
-
-                }
-
-                case 4 -> continueAdding = false;
+                case 3 -> continueAdding = false;
 
                 default -> System.out.println("Invalid choice");
             }
@@ -133,15 +110,6 @@ public class LibraryService implements LibraryInterface {
                     System.out.println();
                 }
         }
-        System.out.println("DVD DETAILS");
-        for(Item i : LibraryItem){
-            if (i instanceof DVD dvd) {
-                System.out.println("DVD DETAILS");
-                System.out.println("Title: " + dvd.getTitle());
-                System.out.println("Director: " + dvd.getDirector());
-                System.out.println("Available: " + dvd.getStatus());
-            }
-        }
 
     }
 
@@ -168,12 +136,6 @@ public class LibraryService implements LibraryInterface {
                     System.out.println("Title: " + magazine.getTitle());
                     System.out.println("Issue Number: " + magazine.getIssueNumber());
                     System.out.println("Available: " + magazine.getStatus());
-                }
-                else if (i instanceof DVD dvd) {
-                    System.out.println("DVD DETAILS");
-                    System.out.println("Title: " + dvd.getTitle());
-                    System.out.println("Director: " + dvd.getDirector());
-                    System.out.println("Available: " + dvd.getStatus());
                 } else {
                     System.out.println(Constants.ITEM_NOT_FOUND);
                 }

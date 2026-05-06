@@ -2,7 +2,6 @@ package Services;
 
 import Entites.*;
 import Utilities.Constants;
-import Utilities.MenuMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +10,8 @@ import java.util.UUID;
 
 public class MemberService {
 
-     List<Member> memberList = new ArrayList<>();
+    static List<Member> memberList = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
-
     public void registerMember(Member member){
         for (Member i : memberList) {
             if (i.getId().equals(member.getId())) {
@@ -24,6 +22,7 @@ public class MemberService {
         memberList.add(member);
         System.out.println(Constants.MEMBER_REGISTERED);
     }
+
     public void registerMultipleMembers(){
 
         Member member = new Member();
@@ -69,6 +68,7 @@ public class MemberService {
             System.out.print("Street: "+ member.getAddress().getStreet() +
                     " || City: "+ member.getAddress().getCity() +
                     " || Postal Code: "+ member.getAddress().getPostalCode());
+            System.out.println();
 
             if(member.getBorrowItems() != null){
                 for(Item item : member.getBorrowItems()){
@@ -98,6 +98,7 @@ public class MemberService {
                 System.out.print("Street: " + member.getAddress().getStreet() +
                         " || City: " + member.getAddress().getCity() +
                         " || Postal Code: " + member.getAddress().getPostalCode());
+                System.out.println();
 
                 if (member.getBorrowItems() != null) {
                     for (Item item : member.getBorrowItems()) {
@@ -107,6 +108,7 @@ public class MemberService {
 
                 break;
             }
+
             System.out.println(Constants.MEMBER_NOT_FOUND);
         }
 
