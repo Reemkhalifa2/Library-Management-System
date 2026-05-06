@@ -2,6 +2,7 @@ package Services;
 
 import Behaviour.LibraryInterface;
 import Entites.Book;
+import Entites.DVD;
 import Entites.Item;
 import Entites.Magazines;
 import Utilities.Constants;
@@ -36,7 +37,8 @@ public class LibraryService implements LibraryInterface {
             System.out.println("""
                 1. Book
                 2. Magazine
-                3. Exit
+                3. DVD
+                4. Exit
                 """);
 
             System.out.println(Constants.ENTER_OPTION);
@@ -80,7 +82,13 @@ public class LibraryService implements LibraryInterface {
                     addItem(magazines);
                 }
 
-                case 3 -> continueAdding = false;
+                case 3 -> {
+                    DVD dvd = new DVD();
+
+
+                }
+
+                case 4 -> continueAdding = false;
 
                 default -> System.out.println("Invalid choice");
             }
