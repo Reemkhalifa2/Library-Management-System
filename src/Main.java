@@ -18,10 +18,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Menu menu = new Menu();
 
-        Boolean Continue = true;
-
-        while (Continue) {
-
             menu.displayMenu();
             System.out.println(Constants.ENTER_OPTION);
 
@@ -38,6 +34,7 @@ public class Main {
 
                         LibraryExit = libraryService.handleLibraryMenu(scanner.nextInt());
                     }
+                    menu.displayMenu();
                 }
 
                 case 2 -> {
@@ -49,26 +46,28 @@ public class Main {
 
                         MemberExit = memberService.handleMemberMenu(scanner.nextInt());
                     }
+                    menu.displayMenu();
                 }
 
                 case 3 -> {
-                    Boolean borrowExit = true;
 
-                    while (borrowExit) {
                         System.out.println(MenuMessage.BorrowMenu);
                         System.out.println(Constants.ENTER_OPTION);
 
-                        borrowExit = borrowService.handleBorrowMenu(scanner.nextInt());
-                    }
+                        borrowService.handleBorrowMenu(scanner.nextInt());
+
+                    menu.displayMenu();
                 }
 
                 case 4 -> {
                     System.out.println("Exit...");
-                    Continue = false;
+                    return;
                 }
 
-                default -> System.out.println("Invalid option");
+                default -> {
+                    System.out.println("Invalid option");
+                    menu.displayMenu();
+                }
             }
         }
     }
-}
