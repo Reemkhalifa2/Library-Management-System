@@ -118,24 +118,35 @@ public class MemberService {
 
 
 
-    public Boolean handleMemberMenu(Integer option) {
+    public void handleMemberMenu() {
+        int option = scanner.nextInt();
+        scanner.nextLine();
+
         switch (option) {
-            case 1 -> registerMultipleMembers();
-            case 2-> findMemberById();
-            case 3-> displayAllMembers();
+            case 1 -> {
+                registerMultipleMembers();
+                handleMemberMenu();
+            }
+            case 2-> {
+                findMemberById();
+                handleMemberMenu();
+            }
+            case 3-> {
+                displayAllMembers();
+                handleMemberMenu();
+            }
             case 4-> {
                 System.out.println("Exit Member Services...");
-                return false;
+                return;
             }
 
-            default -> System.out.println("Invalid option");
+            default -> {
+                System.out.println("Invalid option");
+                handleMemberMenu();
+            }
 
 
         }
-
-
-
-        return true;
 
 
     }

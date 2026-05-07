@@ -9,65 +9,57 @@ import java.util.Scanner;
 
 public class Main {
 
+    static Scanner scanner = new Scanner(System.in);
+
+    static LibraryService libraryService = new LibraryService();
+    static MemberService memberService = new MemberService();
+    static BorrowService borrowService = new BorrowService();
+
     public static void main(String[] args) {
 
-        LibraryService libraryService = new LibraryService();
-        MemberService memberService = new MemberService();
-        BorrowService borrowService = new BorrowService();
+        handleMainMenu();
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    public static void handleMainMenu() {
+
         Menu menu = new Menu();
 
-            menu.displayMenu();
-            System.out.println(Constants.ENTER_OPTION);
+        menu.displayMenu();
 
-            int choice = scanner.nextInt();
+        System.out.println(Constants.ENTER_OPTION);
 
-            switch (choice) {
+        int choice = scanner.nextInt();
+        scanner.nextLine();
 
-                case 1 -> {
-                    Boolean LibraryExit = true;
+        switch (choice) {
 
-                    while (LibraryExit) {
-                        System.out.println(MenuMessage.LibraryService);
-                        System.out.println(Constants.ENTER_OPTION);
+            case 1 -> {
+                System.out.println(MenuMessage.LibraryService);
+                libraryService.handleLibraryMenu();
+                handleMainMenu();
+            }
 
-                        LibraryExit = libraryService.handleLibraryMenu(scanner.nextInt());
-                    }
-                    menu.displayMenu();
-                }
+            case 2 -> {
+                System.out.println(MenuMessage.MemberMenu);
+                memberService.handleMemberMenu();
+                handleMainMenu();
+            }
 
-                case 2 -> {
-                    Boolean MemberExit = true;
+            case 3 -> {
+                System.out.println(MenuMessage.BorrowMenu);
+                borrowService.handleBorrowMenu();
+                handleMainMenu();
+            }
 
-                    while (MemberExit) {
-                        System.out.println(MenuMessage.MemberMenu);
-                        System.out.println(Constants.ENTER_OPTION);
+            case 4 -> {
+                System.out.println("Exit...");
+                return;
+            }
 
-                        MemberExit = memberService.handleMemberMenu(scanner.nextInt());
-                    }
-                    menu.displayMenu();
-                }
-
-                case 3 -> {
-
-                        System.out.println(MenuMessage.BorrowMenu);
-                        System.out.println(Constants.ENTER_OPTION);
-
-                        borrowService.handleBorrowMenu(scanner.nextInt());
-
-                    menu.displayMenu();
-                }
-
-                case 4 -> {
-                    System.out.println("Exit...");
-                    return;
-                }
-
-                default -> {
-                    System.out.println("Invalid option");
-                    menu.displayMenu();
-                }
+            default -> {
+                System.out.println("Invalid option");
+                handleMainMenu();
             }
         }
     }
+}

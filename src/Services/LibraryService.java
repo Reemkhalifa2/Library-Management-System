@@ -5,6 +5,7 @@ import Entites.Book;
 import Entites.Item;
 import Entites.Magazines;
 import Utilities.Constants;
+import Utilities.MenuMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,29 +147,37 @@ public class LibraryService implements LibraryInterface {
         return foundItem;
     }
 
+    public void handleLibraryMenu() {
 
+        int option = scanner.nextInt();
+        scanner.nextLine();
 
-
-    public Boolean handleLibraryMenu(Integer option) {
         switch (option) {
-            case 1 -> addMultipleItems();
-            case 2-> findItemByTitle();
-            case 3-> displayAllItem();
-            case 4-> {
+
+            case 1 -> {
+                addMultipleItems();
+                handleLibraryMenu();
+            }
+
+            case 2 -> {
+                findItemByTitle();
+                handleLibraryMenu();
+            }
+
+            case 3 -> {
+                displayAllItem();
+                handleLibraryMenu();
+            }
+
+            case 4 -> {
                 System.out.println("Exit Library Services...");
-                return false;
+                return;
             }
 
-
-            default -> System.out.println("Invalid option");
-
-
+            default -> {
+                System.out.println("Invalid option");
+                handleLibraryMenu();
             }
-
-
-
-        return true;
-
-
+        }
     }
 }

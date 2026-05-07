@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84972165-97f7-4d65-ba84-9aea1de028c3" name="Changes" comment="Implement BorrowInterface in BorrowService">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Behaviour/BorrowInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Behaviour/LibraryInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Entites/Address.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Entites/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Entites/Item.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Entites/Magazines.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Entites/Member.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Menu/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Menu/MenuInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Services/BorrowService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Services/LibraryService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Services/MemberService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Utilities/Constants.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/LibraryManagementSystem/Utilities/MenuMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudentRegistration/StudentRegistration.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/BorrowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/BorrowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/LibraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/LibraryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringTask2-Java/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../StringTask2-Java/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringTask2-Java/src/catDog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StringTask2-Java/src/catDog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringTask2-Java/src/countHi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StringTask2-Java/src/countHi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StringTask2-Java/src/doubleChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../StringTask2-Java/src/doubleChar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array2-coding-tasks/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../array2-coding-tasks/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../array2-coding-tasks/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../array2-coding-tasks/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/reem1/OneDrive/Desktop/Library-Management-System" value="3DJL23aQ6L3MREN9ACVznzd0lGK" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3DJL23aQ6L3MREN9ACVznzd0lGK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MAin.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging recursive__menu",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/reem1/OneDrive/Desktop/Library-Management-System"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="MAin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="LibraryManagementSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84972165-97f7-4d65-ba84-9aea1de028c3" name="Changes" comment="" />
+      <created>1777995016152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777995016152</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Refactor BorrowService: clean up code and improve menu option handling">
+      <option name="closed" value="true" />
+      <created>1777997681177</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1777997681177</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Refactor LibraryService: change LibraryItem to static and simplify findItem method">
+      <option name="closed" value="true" />
+      <created>1777997695819</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777997695819</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor Member: fix borrowItems list">
+      <option name="closed" value="true" />
+      <created>1777997715399</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777997715399</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactor MemberService: make memberList static and improve output formatting">
+      <option name="closed" value="true" />
+      <created>1777997725356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777997725356</updated>
+    </task>
+    <task id="LOCAL-00005" summary="complete BorrowService">
+      <option name="closed" value="true" />
+      <created>1777998724165</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998724165</updated>
+    </task>
+    <task id="LOCAL-00006" summary="complete MemberService">
+      <option name="closed" value="true" />
+      <created>1777998744315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998744315</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Fix menu option numbering in MenuMessage">
+      <option name="closed" value="true" />
+      <created>1777998752289</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998752289</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implement BorrowInterface in BorrowService">
+      <option name="closed" value="true" />
+      <created>1777998909110</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777998909110</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor BorrowService: clean up code and improve menu option handling" />
+    <MESSAGE value="Refactor LibraryService: change LibraryItem to static and simplify findItem method" />
+    <MESSAGE value="Refactor Member: fix borrowItems list" />
+    <MESSAGE value="Refactor MemberService: make memberList static and improve output formatting" />
+    <MESSAGE value="complete BorrowService" />
+    <MESSAGE value="complete MemberService" />
+    <MESSAGE value="Fix menu option numbering in MenuMessage" />
+    <MESSAGE value="Implement BorrowInterface in BorrowService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement BorrowInterface in BorrowService" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
