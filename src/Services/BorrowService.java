@@ -12,7 +12,6 @@ public class BorrowService implements BorrowInterface {
     LibraryService libraryService = new LibraryService();
     MemberService memberService = new MemberService();
     static Scanner scanner = new Scanner(System.in);
-
     @Override
     public void borrowItem() {
 
